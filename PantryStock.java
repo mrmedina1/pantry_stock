@@ -14,14 +14,25 @@ public class PantryStock {
 
 	public static void main(String[] args) {
 		int selection = -1;
+		String item;
 		Scanner input = new Scanner(System.in);
-		LinkedListGeneric ll = new LinkedListGeneric();
+		LinkedListGeneric<Item> ll = new LinkedListGeneric<Item>();
 		
 		while (selection != 0) {
 			menu();
 			selection = input.nextInt();
+			input.nextLine();	//Clears newline char after nextInt
 			switch (selection) {
-				case 1: System.out.print("Enter name of grocery item to add: ");
+				case 1: Item grocery = new Item();
+						System.out.print("Enter name of grocery item to add: ");
+						grocery.setGrocery(input.nextLine());
+						System.out.print("\nEnter the quantity of " + grocery.getGrocery() + ": ");
+						grocery.setQuantity(input.nextInt());
+						input.nextLine();
+						
+						ll.insertHead(grocery);
+						
+						ll.printList();
 						break;
 				case 2: System.out.print("Enter name of grocery item to remove: ");
 						break;
