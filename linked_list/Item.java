@@ -1,3 +1,5 @@
+package linked_list;
+
 //import java.util.Date;
 
 public class Item {
@@ -5,25 +7,29 @@ public class Item {
 	int quantity;
 	//Date expDate = new Date(0, 0, 0);  //Use calendar class?
 	
-	Item() {
+	public Item() {
 		grocery = null;
 		quantity = -1;
 	}
 	
-	Item(String grocery, int quantity) {
+	public Item(String grocery, int quantity) {
 		this.grocery = grocery;
 		this.quantity = quantity;
 	}
 
-	void setGrocery(String grocery) {
+	public void setGrocery(String grocery) {
 		this.grocery = grocery;
 	}
 	
-	void setQuantity(int quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 
-	String getGrocery() {
+	public String getGrocery() {
 		return grocery;
+	}
+	
+	public int getQuantity() {
+		return quantity;
 	}
 }
