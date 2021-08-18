@@ -11,6 +11,7 @@ public class PantryStock {
 		System.out.println("3. Show pantry stock");
 		System.out.println("4. Save pantry stock list");
 		System.out.println("0. Exit & Save");
+		//LOAD PANTRY STOCK LIST
 	}
 	
 //SORT METHOD INCOMPLETE

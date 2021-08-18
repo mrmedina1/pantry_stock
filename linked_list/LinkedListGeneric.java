@@ -101,21 +101,31 @@ public class LinkedListGeneric<T extends Item>
 			currentNode = currentNode.next;
 		}
 	}
-//NEXT: WRITE WHOLE LIST TO FILE
-	public void writeList() {
+//NEXT: ALLOW USER INPUT FOR FILENAME.  ALLOW USER TO SEE PREVIOUS SAVES.
+	public void writeList()
+	{
 		String fileName = "newList.txt";
 		
 		if (head == null)
 			System.out.println("The grocery list is empty, no data has been saved.");
-		else {
-			try {
+		else
+		{
+			try
+			{
 				FileWriter fileWriter = new FileWriter(fileName);
 				PrintWriter printWriter = new PrintWriter(fileWriter);
-				printWriter.print(head.data.grocery + " " + head.data.quantity);
-				//printWriter.printf("Product name is %s and its price is %d $", "Sam", 1000);
+				
+				Node<T> currentNode = head;
+				while (currentNode != null)
+				{
+					printWriter.println(currentNode.data.grocery + " " + currentNode.data.quantity);
+					currentNode = currentNode.next;
+				}
+				
 				printWriter.close();
 			}
-			catch(IOException e) {
+			catch(IOException e)
+			{
 				System.out.println(e);
 				e.printStackTrace();
 			}
